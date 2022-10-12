@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/static/css/style.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="description" content="Bookstore - WEB API">
+        <meta name="author" content="Panagiotis Kaliosis">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home page</title>
+
+         <!-- Load the Handlebars library. The Handlebars object is 
+        now available in the rest of the scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <!--
+        Load the JS code for the page. The code is located inside the public folder.
+        However, the Node.js app renames this folder to static
+    -->
+   
+    
+
+    </head>
+    <body>
+        <main>
+            <div class="grid-container-main-page">
+                <header>
+                    <div class="heroImage">
+                        <div class="heroContents">
+                            <h1 id="head1">E-bookstore</h1>
+                            <p id="heroCont">Penguin Random House API</p>
+                            <form style="display: inline" action="https://www.python.org/" method="get">
+                                <button class="bookButton">Learn more</button>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+                <nav class="navigator">
+                    <ul>
+                        <li><a href="https://www.python.org/"><i class="fa fa-cubes" aria-hidden="true"></i> Penguin Random House</a> </li> 
+                        <li><a href="https://www.python.org/downloads/"><i class="fa fa-book" aria-hidden="true"></i> Penguin Random House Documentation</a> </li>
+                        <li><a href="https://www.python.org/doc/"><i class="fa fa-server" aria-hidden="true"></i> Penguin Random House API</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Penguin_Random_House"><i class="fa fa-wikipedia-w" aria-hidden="true"></i> Penguin Random House Wikipedia</a></li>
+                        <li><div class="search-container">
+                            <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div></li>
+                    </ul>
+                </nav>
+                <div class="sidebar">
+                    <a class="sidebar-element" href="./index.html"><i class="fa fa-fw fa-home"></i> Main Page</a>
+                    <a class="sidebar-element" id="getFavs" href="./favoriteBooks.html"><i class="fa fa-heart"></i> Favorite Books</a>
+                    <a class="sidebar-element active" href="./editBook.html"><i class="fa fa-fw fa-user"></i> Edit</a>
+                </div>
+                <article class="about-python">
+                    <section class="intro">
+                        <h2 id="edit-book">Edit Book.</h2>
+                        <p id="edit-book">In this page, you can edit your selected book's data.</p>
+                    </section>
+                    <div id="edit-output"></div>
+                
+                <article class="my-form">
+                    <details>
+                        <summary><strong>Why subscribe.</strong></summary>
+                        <p>In our community, we love to hear our fans opinion! It really matters for us and gives us food for thought. So sign up,
+                            become a subscriber and let's discuss, hear different opinions and have fun!</p>
+                    </details><br>
+                    <article class="my-form">
+                        <fieldset id="fieldset-1">
+                        <fieldset id="fieldset-2">
+                        <legend><strong>Edit Book's Data.</strong></legend><br>
+                         <!----------------------------------------------------------------------------------->
+                        <i class="fa fa-video-camera"></i>
+                        <label for="title"><strong>Title:</strong></label>
+                        <input class="my-form-input" type="text" id="title" name="title" size=35 autocomplete="name" required><br><br>
+                         <!----------------------------------------------------------------------------------->
+                        <i class="fa fa-camera" aria-hidden="true"></i>
+                        <label for="titleshort"><strong>Titleshort:</strong></label>
+                        <input class="my-form-input" type="text" id="titleshort" name="titleshort" size=35 autocomplete="family-name" required><br><br>
+                         <!----------------------------------------------------------------------------------->
+                        <i class="fa fa-codepen"></i>
+                        <label for="isbn"><strong>ISBN(read-only):</strong></label>
+                        <input class="my-form-input" type="text" id="isbn" name="isbn" size=30><br><br>
+                         <!----------------------------------------------------------------------------------->
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        <label for="workid"><strong>Workid:</strong></label>
+                        <input class="my-form-input" type="text" id="workid" name="workid"> <!--pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}--><br><br>
+                        <!----------------------------------------------------------------------------------->
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        <label for="review"><strong>Review:</strong></label><br>
+                        <textarea placeholder="i.e Write a review about the book..." id="review" name="review" rows="4" cols="100"></textarea><br><br>
+                        <br><br>
+                         <!----------------------------------------------------------------------------------->
+                        <br>
+                        </fieldset><br><br>
+                        <button id="submit-button">Submit</button>
+                        <!--<input id="submit-button" type="submit" value="Submit">-->
+                        </fieldset>
+                    </article>
+                    <!-- </form> -->
+                </article>
+                </article>
+                
+                <br>
+                <!--
+                <footer class="my-footer">
+                    <div class="footer-flexbox">
+                        <div class="footer-column">
+                            <form class="footer-form" action="action_page.php">
+                                <div class="footer-container">
+                                  <h2>Subscribe to our Newsletter!</h2>
+                                  <p>This way you can learn the latest news about Python!</p>
+                                </div>
+                              
+                                <div class="footer-container">
+                                  <input id="text1" type="text" name="name" required>
+                                  <input id="text2" type="text" name="mail" required>
+                                  <label>
+                                    <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+                                  </label>
+                                </div>
+                              
+                                <div class="footer-container">
+                                  <input id="submitButton" type="submit" value="Subscribe">
+                                </div>
+                              </form>
+                        </div>
+                    </div>
+                    <p id="copyrights">Copyrights @ absolutely nobody. Created for an awesome AUEB Project.</p>
+                </footer>
+            -->
+            </div>
+        </div>
+        <script id="handlebars-edit-show" type="text/x-handlebars-template">
+            <div>
+                <h3>Favorite Book: {{i}}</h3>
+                <p id="bookTitle"><strong>Title:</strong> {{title}}</p>
+                <p id="bookTitleshort"><strong>Titleshort:</strong> {{titleshort}}</p>
+                <p id="bookIsbn"><strong>ISBN Code:</strong> {{isbn}}</p>
+                <p id="bookWorkid"><strong>Work ID:</strong> {{workid}}</p>
+                <!-- <button id="editBookBtn"><i class="fa fa-pencil"></i> Edit Book's Data</button>
+                <button id="deleteBookBtn"><i class="fa fa-trash"></i> Delete Book</button> -->
+                <p>---------------------------------------------</p>
+            </div>
+        </script>
+        </main>
+    </body>
+    <script src="/static/js/edit.js" type="text/javascript"></script>
+
+    
+</html>
